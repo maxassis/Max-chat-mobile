@@ -1,10 +1,10 @@
-import { KeyboardAvoidingView, SafeAreaView, Text, TextInput, TouchableNativeFeedbackComponent, TouchableOpacity, View } from "react-native"
+import { KeyboardAvoidingView, SafeAreaView, Text, TextInput, TouchableOpacity, View } from "react-native"
 import Logo from "../../assets/chatguru.svg"
 
 export default function Login() {
     return (
         <SafeAreaView className="flex-1">
-            {/* <KeyboardAvoidingView> */}
+            <KeyboardAvoidingView behavior="padding" enabled className="flex-1">
             <View className="flex-1 bg-cg-black items-center justify-center px-5">
                 <View className="mb-16">
                     <Logo width={240} />
@@ -21,15 +21,11 @@ export default function Login() {
                             
                </View>
 
-               <TouchableOpacity className="bg-cg-green mt-24 p-3 rounded w-full items-center">
+               <TouchableOpacity className="bg-cg-green mt-20 p-3 rounded w-full items-center">
                     <Text className="text-white text-base font-bold">Entrar</Text>
                 </TouchableOpacity> 
-
-
             </View>
-                
-            {/* </KeyboardAvoidingView> */}
+            </KeyboardAvoidingView>
         </SafeAreaView>
-        
     )
 }
