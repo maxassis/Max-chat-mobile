@@ -7,6 +7,10 @@ module.exports = {
         'cg-black': '#212121',
         'cg-green': '#14B67B',
       },
+      fontFamily: {
+        'roboto-regular': 'Roboto_400Regular',
+        'roboto-bold': 'Roboto_700Bold',
+      }
     },
   },
   plugins: [],
