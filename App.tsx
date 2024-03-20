@@ -7,6 +7,7 @@ import {
   Roboto_700Bold,
   useFonts,
 } from "@expo-google-fonts/roboto";
+import Chat from './src/pages/chat';
 
 export default function App() {
 
@@ -22,7 +23,8 @@ export default function App() {
   return (
     <>
       {/* <Login /> */}
-      <Chatlist />
+      {/* <Chatlist /> */}
+      <Chat />
       <StatusBar style="light" translucent={false} backgroundColor='#212121' />
     </>
   );
