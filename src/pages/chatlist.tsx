@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Image,
   SafeAreaView,
@@ -5,14 +6,32 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  FlatList
 } from "react-native";
 import Logo from "../../assets/chatguru.svg";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import Card from "../components/card";
+import { FlashList } from "@shopify/flash-list";
+import type { ChatlistData } from "../types/chatlistTypes";
 
 export default function Chatlist() {
+  const [data, setData] = useState<ChatlistData[]>();
+
+  useEffect(() => {
+    // setLoading(true);
+    const data = fetch(
+      "https://run.mocky.io/v3/eae31c54-ae3d-41f7-9586-ce3e4d8e20b9"
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        setData(json.chats);
+      })
+      .catch((e) => console.log(e));
+    // .finally(() => setLoading(false));
+  }, []);
+
   return (
     <SafeAreaView className="flex-1">
       <View>
@@ -46,8 +65,13 @@ export default function Chatlist() {
           <Text>Listando 20 resultados</Text>
         </View>
 
-        <Card />
-
+        <FlatList
+          overScrollMode="never"
+          data={data}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <Card dt={item} />}
+          // estimatedItemSize={80}
+        />
       </View>
     </SafeAreaView>
   );

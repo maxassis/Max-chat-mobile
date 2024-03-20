@@ -1,6 +1,7 @@
 import { View, Text, Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { cva, VariantProps } from 'class-variance-authority'
+import type { ChatlistData, LastMessage, Tag } from "../types/chatlistTypes";
 
 const PillStyles = cva("py-[0.5px] px-2 rounded-full items-center justify-center", {
   variants: {
@@ -16,9 +17,9 @@ const PillStyles = cva("py-[0.5px] px-2 rounded-full items-center justify-center
 
 
 
-export default function Card() {
-  const red = "FECHADO";
-
+export default function Card({dt}: {dt: ChatlistData}) {
+  const statusColor = dt.status;
+  console.log(statusColor)
 
   return (
     <View className="h-20 border-b-[0.5px] border-slate-300 flex-row items-center justify-between pr-4 pl-2 gap-x-2 ">
@@ -29,23 +30,30 @@ export default function Card() {
         />
 
         <View className="ml-3 gap-y-1 flex-1">
-          <Text className="font-roboto-bold text-lg" numberOfLines={1}>
-            Gabi Ware
+          <Text className="font-roboto-bold text-base" numberOfLines={1}>
+            {dt.name}
           </Text>
           <Text className="text-slate-500 text-sm" numberOfLines={1}>
-            Ola!!! tudo bem com vc ??? ejejejejejejejejjejejejejjejejej
+            {dt.last_message?.text}
           </Text>
         </View>
       </View>
 
       <View className="">
         <View className="flex-row gap-x-2 mb-3 justify-end">
-          <View className={PillStyles({ intent: red })}>
+          <View className={PillStyles({ intent: dt.status })}>
             <Text className="text-xs text-white">ABERTO</Text>
           </View>
-          <View className="py-[0.5px] px-2 rounded-full items-center justify-center bg-cg-red">
-            <Text className="text-white">1</Text>
-          </View>
+          {dt.new_messages && (
+            <View className="py-[0.5px] px-2 rounded-full items-center justify-center bg-cg-red">
+            <Text className="text-white">{dt.new_messages}</Text>
+          </View> 
+          )}
+
+
+          {/* <View className="py-[0.5px] px-2 rounded-full items-center justify-center bg-cg-red">
+            <Text className="text-white">{dt.new_messages}</Text>
+          </View> */}
         </View>
 
         <View className="flex-row justify-end">
