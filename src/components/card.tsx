@@ -1,15 +1,25 @@
 import { View, Text, Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { cva, VariantProps } from 'class-variance-authority'
 
-
-function teste(name: string) {
-    if(name == "ABERTO")
-    return "bg-red-600"
-}
+const PillStyles = cva("py-[0.5px] px-2 rounded-full items-center justify-center", {
+  variants: {
+    intent: {
+      AGUARDANDO: "bg-cg-yellow",
+      ABERTO: "bg-cg-red",
+      'EM ATENDIMENTO': "bg-cg-blue",
+      RESOLVIDO: "bg-cg-green-secondary",
+      FECHADO: "bg-cg-blue-light"
+    },    
+  },
+});
 
 
 
 export default function Card() {
+  const red = "FECHADO";
+
+
   return (
     <View className="h-20 border-b-[0.5px] border-slate-300 flex-row items-center justify-between pr-4 pl-2 gap-x-2 ">
       <View className="flex-row gap-x-2 pr-2 flex-1">
@@ -30,11 +40,11 @@ export default function Card() {
 
       <View className="">
         <View className="flex-row gap-x-2 mb-3 justify-end">
-          <View className="py-[0.5px] px-2 rounded-full items-center justify-center bg-red-600">
-            <Text className="text-xs">ABERTO</Text>
+          <View className={PillStyles({ intent: red })}>
+            <Text className="text-xs text-white">ABERTO</Text>
           </View>
-          <View className="py-[0.5px] px-2 rounded-full items-center justify-center bg-red-600">
-            <Text>1</Text>
+          <View className="py-[0.5px] px-2 rounded-full items-center justify-center bg-cg-red">
+            <Text className="text-white">1</Text>
           </View>
         </View>
 
