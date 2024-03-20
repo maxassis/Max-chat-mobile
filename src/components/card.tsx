@@ -19,8 +19,7 @@ const PillStyles = cva("py-[0.5px] px-2 rounded-full items-center justify-center
 
 export default function Card({dt}: {dt: ChatlistData}) {
   const statusColor = dt.status;
-  console.log(statusColor)
-
+  
   return (
     <View className="h-20 border-b-[0.5px] border-slate-300 flex-row items-center justify-between pr-4 pl-2 gap-x-2 ">
       <View className="flex-row gap-x-2 pr-2 flex-1">
