@@ -1,14 +1,25 @@
-import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView, Text, TouchableOpacity, View, FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Avatar, AvatarImage, AvatarFallback } from "../components/Avatar";
 import { cva } from "class-variance-authority";
 import SendMsg from "../components/SendMsg";
 import ReceivedMsg from "../components/ReceivedMsg";
+import { FlashList } from "@shopify/flash-list";
+import { chats } from "../../mock-chats";
+
+interface chat {
+  id:       number;
+  send:     null | string;
+  received: null | string;
+}
 
 export default function Chat() {
+  const data = chats
+
+
   return (
     <SafeAreaView className="flex-1">
-      <View className="flex1">
+      {/* <View className="flex1"> */}
         <View className="h-16 bg-cg-black items-center px-3 flex-row ">
           <Ionicons name="arrow-back" size={35} color="#fff" />
 
@@ -35,14 +46,31 @@ export default function Chat() {
           </TouchableOpacity>
         </View>
 
-        <ReceivedMsg />
-        <SendMsg />
+        <View className="flex-1">
+        <FlatList
+          overScrollMode="never"
+          inverted
+          data={[...chats].reverse()}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) =>
+            item.send ? (
+              <SendMsg msg={item.send!} />
+            ) : (
+              <ReceivedMsg msg={item.received!} />
+            )
+          }
+          // estimatedItemSize={91}
+        />
+        </View>
+
+
+       
   
 
-        {/* <View className="min-h-[60] max-h-15o bg-blue-400">
+        <View className="min-h-[60] max-h-15o bg-blue-400">
 
-        </View> */}
-      </View>
+        </View>
+      {/* </View> */}
     </SafeAreaView>
   );
 }

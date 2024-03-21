@@ -37,7 +37,6 @@ export default function Chatlist() {
 
   return (
     <SafeAreaView className="flex-1">
-      <View className="flex-1">
         <View className="bg-cg-black flex-row items-center h-14 px-3 justify-between ">
           <Logo width={120} />
 
@@ -75,8 +74,6 @@ export default function Chatlist() {
           renderItem={({ item }) => <Card dt={item} />}
           estimatedItemSize={80}
         />
-        
-      </View>
     </SafeAreaView>
   );
 }

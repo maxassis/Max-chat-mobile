@@ -1,17 +1,14 @@
 import { Text, View } from "react-native";
 import { Avatar, AvatarImage, AvatarFallback } from "../components/Avatar";
 
-export default function SendMsg() {
+export default function SendMsg({msg}: {msg: string}) {
     return (
         <View className="mb-3">
-          <View className="px-3 flex-row justify-items-end">
-            <View className="mr-3 items-end">
-              <View className="max-w-[90%] bg-slate-200 mb-1 rounded-xl p-3 ">
-                <Text className="text-xm">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
-                  dolores facere eius consectetur non obcaecati quos distinctio
-                  odio fuga nesciunt doloremque nisi, in cum reiciendis quod
-                  sapiente aliquid porro amet.
+          <View className="mr-3 flex-row justify-end">
+            <View className="mr-3 pl-3 items-end flex-1">
+              <View className=" bg-green-50 mb-1 rounded-xl p-3 ">
+                <Text className="text-base leading-5">
+                  {msg}
                 </Text>
               </View>
               <View className="max-w-[90%]">
