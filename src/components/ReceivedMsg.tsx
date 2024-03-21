@@ -10,8 +10,8 @@ export default function ReceivedMsg({msg}: {msg: string}) {
               <AvatarFallback>CG</AvatarFallback>
             </Avatar>
 
-            <View className="ml-3 pr-3 self-start flex-1">
-              <View className=" bg-slate-100 mb-1 rounded-xl p-3 ">
+            <View className="ml-3 pr-6 self-start flex-1">
+              <View className="self-start bg-slate-100 mb-1 rounded-xl p-3 ">
                 <Text className="text-base leading-5">
                   {msg}
                 </Text>

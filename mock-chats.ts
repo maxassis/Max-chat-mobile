@@ -5,7 +5,7 @@ export const chats = [{
   }, {
     "id": "2",
     "send": null,
-    "received": "a libero nam dui proin leo odio"
+    "received": "primeira mensagem"
   }, {
     "id": "3",
     "send": null,
