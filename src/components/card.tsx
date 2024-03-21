@@ -1,6 +1,6 @@
 import { View, Text, Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { cva, VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
 import type { ChatlistData, LastMessage, Tag } from "../types/chatlistTypes";
 
 const PillStyles = cva("py-[0.5px] px-2 rounded-full items-center justify-center", {
