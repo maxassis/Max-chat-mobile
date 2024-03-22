@@ -11,7 +11,7 @@ export default function ReceivedMsg({msg}: {msg: string}) {
             </Avatar>
 
             <View className="ml-3 pr-6 self-start flex-1">
-              <View className="self-start bg-slate-100 mb-1 rounded-xl p-3 ">
+              <View className="self-start bg-[#E8E9EC] mb-1 rounded-xl p-3 ">
                 <Text className="text-base leading-5">
                   {msg}
                 </Text>

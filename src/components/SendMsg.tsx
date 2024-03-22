@@ -6,7 +6,7 @@ export default function SendMsg({msg}: {msg: string}) {
         <View className="mb-3">
           <View className="mr-3 flex-row justify-end">
             <View className="mr-3 pl-6 items-end flex-1">
-              <View className=" bg-green-50 mb-1 rounded-xl p-3 ">
+              <View className=" bg-[#E7F3EF] mb-1 rounded-xl p-3 ">
                 <Text className="text-base leading-5">
                   {msg}
                 </Text>
