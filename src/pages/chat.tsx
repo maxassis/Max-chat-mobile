@@ -18,6 +18,10 @@ import { FlashList } from "@shopify/flash-list";
 import { chats } from "../../mock-chats";
 import Plus from "../../assets/plus.svg";
 import Mic from "../../assets/mic.svg";
+import Edit from "../../assets/edit.svg"
+import Clock from "../../assets/clock.svg"
+import Message from "../../assets/message.svg"
+import PaperClip from "../../assets/paperclip.svg"
 import EmojiPicker, { pt } from "rn-emoji-keyboard";
 
 interface chat {
@@ -31,6 +35,7 @@ interface chat {
 export default function Chat() {
   const [isOpen, setIsOpen] = useState(false);
   const [userInput, setUserInput] = useState("");
+  const [float, setFloat] = useState(false);
   const data = chats;
 
   const handlePick = ({ emoji } : { emoji: string }) => {
@@ -92,8 +97,26 @@ export default function Chat() {
           categoryPosition="top"
         />    
 
-        <View className="min-h-[70] max-h-[] py-3 max-h-15o px-3 border-t-[0.5px] border-slate-400 flex-row items-center">
-          <Plus width={40} height={40} />
+        <View className="min-h-[70] max-h-[] py-3 max-h-15o px-3 border-t-[0.5px] border-slate-400 flex-row items-center">          
+          {float && (
+            <View className="absolute bottom-16 left-2 w-[52px] h-[180px] items-center justify-between p-3 
+            bg-white border-[0.5px] border-slate-400 ">
+               <View className="w-8 h-8 rounded-full bg-slate-400 items-center justify-center">
+                 <PaperClip />
+               </View>
+               <View className="w-8 h-8 rounded-full bg-cyan-400 items-center justify-center">
+                 <Message />
+               </View>
+               <View className="w-8 h-8 rounded-full bg-blue-400 items-center justify-center">
+                 <Clock />
+               </View>
+               <View className="w-8 h-8 rounded-full bg-cg-green items-center justify-center">
+                 <Edit />
+               </View>
+             </View>
+          )}
+               
+          <Plus width={40} height={40} onPress={() => setFloat(!float)} />
 
           <View className="flex-1 flex-row">
             <TextInput
