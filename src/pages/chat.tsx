@@ -16,21 +16,18 @@ import SendMsg from "../components/SendMsg";
 import ReceivedMsg from "../components/ReceivedMsg";
 import { FlashList } from "@shopify/flash-list";
 import { chats } from "../../mock-chats";
+import { Feather } from "@expo/vector-icons";
+import { SimpleLineIcons } from '@expo/vector-icons';
+import { Octicons } from "@expo/vector-icons";
 import Plus from "../../assets/plus.svg";
 import Mic from "../../assets/mic.svg";
 import Edit from "../../assets/edit.svg";
 import Clock from "../../assets/clock.svg";
 import Message from "../../assets/message.svg";
 import PaperClip from "../../assets/paperclip.svg";
-import User from "../../assets/user.svg";
-import Document from "../../assets/document.svg";
-import Funnel from "../../assets/funnel.svg";
-import Robot from "../../assets/robot.svg";
-import Bar from "../../assets/bar.svg";
-import UserCheck from "../../assets/user-check.svg";
-import Media from "../../assets/media.svg";
 import EmojiPicker, { pt } from "rn-emoji-keyboard";
 import { useKeyboardVisible } from "../hooks/keyboard";
+import colors from "tailwindcss/colors";
 
 interface chat {
   id: number;
@@ -42,7 +39,7 @@ export default function Chat() {
   const [isOpen, setIsOpen] = useState(false);
   const [userInput, setUserInput] = useState("");
   const [float, setFloat] = useState(false);
-  const [sideMenu, setSideMenu] = useState(true);
+  const [sideMenu, setSideMenu] = useState(false);
   const isKeyboardVisible = useKeyboardVisible();
 
   const handlePick = ({ emoji }: { emoji: string }) => {
@@ -55,19 +52,19 @@ export default function Chat() {
   }
 
   function toggleSideMenu() {
-    if(isKeyboardVisible) {
-      Keyboard.dismiss()
-      setFloat(false)
-    } 
-    setSideMenu(!sideMenu);    
+    if (isKeyboardVisible) {
+      Keyboard.dismiss();
+      setFloat(false);
+    }
+    setSideMenu(!sideMenu);
   }
 
   return (
     <SafeAreaView className="flex-1">
       <TouchableWithoutFeedback onPress={() => closeMenu()}>
         <KeyboardAvoidingView behavior="padding" enabled className="flex-1">
-          <View className="h-16 bg-cg-black items-center px-3 flex-row ">
-            <Ionicons name="arrow-back" size={35} color="#fff" />
+          <View className="h-16 bg-white items-center px-3 flex-row border-b-[0.5px] border-b-slate-400  ">
+            <Ionicons name="arrow-back" size={35} color="#333333" />
 
             <Avatar className="h-12 w-12 ml-2">
               <AvatarImage source={require("../../assets/compress2.jpg")} />
@@ -77,7 +74,7 @@ export default function Chat() {
             <View className="h-12 w-56 ml-2 mb-1">
               <Text
                 numberOfLines={1}
-                className="text-white text-lg font-roboto-bold"
+                className="text-cg-black-secondary text-lg font-roboto-bold"
               >
                 Gabi Ware
               </Text>
@@ -91,7 +88,11 @@ export default function Chat() {
               className="ml-auto"
               onPress={() => toggleSideMenu()}
             >
-              <Ionicons name="ellipsis-vertical-sharp" size={28} color="#fff" />
+              <Ionicons
+                name="ellipsis-vertical-sharp"
+                size={28}
+                color="#333333"
+              />
             </TouchableOpacity>
           </View>
 
@@ -116,25 +117,45 @@ export default function Chat() {
                 <View className="absolute w-full h-full bg-black opacity-40 "></View>
                 <View className="absolute justify-around w-[61px] h-[420px] py-2 items-center bg-white border-[0.5px] border-slate-400 right-0 top-0 ">
                   <TouchableOpacity className="w-11 h-11 rounded-md border-slate-400 border-[0.8px] items-center justify-center">
-                    <User />
+                    <Feather name="user" size={30} color={colors.slate[400]} />
                   </TouchableOpacity>
                   <TouchableOpacity className="w-11 items-center justify-center h-11 rounded-md border-slate-400 border-[0.8px]">
-                    <Document />
+                    <Ionicons
+                      name="document-text-outline"
+                      size={30}
+                      color={colors.slate[400]}
+                    />
                   </TouchableOpacity>
                   <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
-                    <Funnel />
+                    <Ionicons
+                      name="funnel-outline"
+                      size={30}
+                      color={colors.slate[400]}
+                    />
                   </TouchableOpacity>
                   <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
-                    <Robot />
+                    <Octicons
+                      name="dependabot"
+                      size={30}
+                      color={colors.slate[400]}
+                    />
                   </TouchableOpacity>
                   <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
-                    <Bar />
+                    <SimpleLineIcons name="graph" size={30} color={colors.slate[400]} />
                   </TouchableOpacity>
                   <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
-                    <UserCheck />
+                    <Feather
+                      name="user-plus"
+                      size={30}
+                      color={colors.slate[400]}
+                    />
                   </TouchableOpacity>
                   <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
-                    <Media />
+                    <Ionicons
+                      name="play-outline"
+                      size={30}
+                      color={colors.slate[400]}
+                    />
                   </TouchableOpacity>
                 </View>
               </>
