@@ -141,7 +141,7 @@ export default function Chat() {
                     />
                   </TouchableOpacity>
                   <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
-                    <SimpleLineIcons name="graph" size={30} color={colors.slate[400]} />
+                    <Feather name="pie-chart" size={30} color={colors.slate[400]} />
                   </TouchableOpacity>
                   <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
                     <Feather

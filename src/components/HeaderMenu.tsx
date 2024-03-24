@@ -13,7 +13,7 @@ import {
   import { SimpleLineIcons } from "@expo/vector-icons";
   
   type pageProps = {
-      selected: 'informations' | 'funnels' | 'chatbot' | 'media' | 'attendance' | 'notes' | 'delegated'
+      selected: 'informations' | 'funnels' | 'chatbot' | 'media' | 'nps' | 'notes' | 'delegated'
   }
   
   export default function HeaderMenu({selected}: pageProps ) {
@@ -54,8 +54,8 @@ import {
           <TouchableOpacity className={page({ intent: selected === 'chatbot' ? "select" : null})}>
             <Octicons name="dependabot" size={27} color={selected === 'chatbot' ? "#fff" : colors.slate[400]} />
           </TouchableOpacity>
-          <TouchableOpacity className={page({ intent: selected === 'attendance' ? "select" : null })}>
-            <SimpleLineIcons name="graph" size={27} color={selected === 'attendance' ? "#fff" : colors.slate[400]} />
+          <TouchableOpacity className={page({ intent: selected === 'nps' ? "select" : null })}>
+            <Feather name="pie-chart" size={27} color={selected === 'nps' ? "#fff" : colors.slate[400]} />          
           </TouchableOpacity>
           <TouchableOpacity className={page({ intent: selected === 'delegated' ? "select" : null })}>
             <Feather name="user-plus" size={27} color={selected === 'delegated' ? "#fff" : colors.slate[400]} />

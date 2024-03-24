@@ -9,6 +9,8 @@ import {
 } from "@expo-google-fonts/roboto";
 import Chat from './src/pages/chat';
 import Notes from './src/pages/notes';
+// import Chatbot from './src/pages/chatbot';
+import Nps from './src/pages/nps';
 
 export default function App() {
 
@@ -27,6 +29,7 @@ export default function App() {
       {/* <Chatlist /> */}
       {/* <Chat /> */}
       <Notes />
+      {/* <Nps /> */}
       <StatusBar style="light" translucent={false} backgroundColor='#212121' />
     </>
   );
