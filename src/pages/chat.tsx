@@ -17,7 +17,6 @@ import ReceivedMsg from "../components/ReceivedMsg";
 import { FlashList } from "@shopify/flash-list";
 import { chats } from "../../mock-chats";
 import { Feather } from "@expo/vector-icons";
-import { SimpleLineIcons } from '@expo/vector-icons';
 import { Octicons } from "@expo/vector-icons";
 import Plus from "../../assets/plus.svg";
 import Mic from "../../assets/mic.svg";

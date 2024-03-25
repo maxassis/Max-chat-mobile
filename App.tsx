@@ -12,6 +12,7 @@ import Notes from './src/pages/notes';
 // import Chatbot from './src/pages/chatbot';
 import Nps from './src/pages/nps';
 import Delegated from './src/pages/delegated';
+import Media from './src/pages/media';
 
 export default function App() {
 
@@ -31,7 +32,8 @@ export default function App() {
       {/* <Chat /> */}
       {/* <Notes /> */}
       {/* <Nps /> */}
-      <Delegated />
+      {/* <Delegated /> */}
+      <Media />
       <StatusBar style="light" translucent={false} backgroundColor='#212121' />
     </>
   );
