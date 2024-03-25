@@ -11,6 +11,7 @@ import Chat from './src/pages/chat';
 import Notes from './src/pages/notes';
 // import Chatbot from './src/pages/chatbot';
 import Nps from './src/pages/nps';
+import Delegated from './src/pages/delegated';
 
 export default function App() {
 
@@ -28,8 +29,9 @@ export default function App() {
       {/* <Login /> */}
       {/* <Chatlist /> */}
       {/* <Chat /> */}
-      <Notes />
+      {/* <Notes /> */}
       {/* <Nps /> */}
+      <Delegated />
       <StatusBar style="light" translucent={false} backgroundColor='#212121' />
     </>
   );
