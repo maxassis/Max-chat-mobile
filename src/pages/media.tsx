@@ -96,7 +96,6 @@ export default function Media() {
                 <View className="h-9 flex-row justify-between">
                     <View className="flex-row gap-x-4">
                         <View className="h-10 w-10 rounded-full bg-red-100 items-center justify-center">
-                            {/* <Ionicons name="image-outline" size={26} color={colors.green[500]} /> */}
                             <Ionicons name="document-text-outline" size={26} color={colors.red[500]} />
                         </View>
 

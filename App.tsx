@@ -13,6 +13,7 @@ import Notes from './src/pages/notes';
 import Nps from './src/pages/nps';
 import Delegated from './src/pages/delegated';
 import Media from './src/pages/media';
+import Funnel from './src/pages/funnel';
 
 export default function App() {
 
@@ -33,7 +34,8 @@ export default function App() {
       {/* <Notes /> */}
       {/* <Nps /> */}
       {/* <Delegated /> */}
-      <Media />
+      {/* <Media /> */}
+      <Funnel />
       <StatusBar style="light" translucent={false} backgroundColor='#212121' />
     </>
   );
