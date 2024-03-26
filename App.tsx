@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Login from './src/pages/login';
 import Chatlist from './src/pages/chatlist';
@@ -14,6 +15,7 @@ import Nps from './src/pages/nps';
 import Delegated from './src/pages/delegated';
 import Media from './src/pages/media';
 import Funnel from './src/pages/funnel';
+import Informations from './src/pages/informations';
 
 export default function App() {
 
@@ -27,7 +29,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <SafeAreaProvider>
       {/* <Login /> */}
       {/* <Chatlist /> */}
       {/* <Chat /> */}
@@ -35,9 +37,10 @@ export default function App() {
       {/* <Nps /> */}
       {/* <Delegated /> */}
       {/* <Media /> */}
-      <Funnel />
+      {/* <Funnel /> */}
+      <Informations />
       <StatusBar style="light" translucent={false} backgroundColor='#212121' />
-    </>
+      </SafeAreaProvider>
   );
 }
 
