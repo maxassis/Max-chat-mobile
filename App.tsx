@@ -16,6 +16,7 @@ import Delegated from './src/pages/delegated';
 import Media from './src/pages/media';
 import Funnel from './src/pages/funnel';
 import Informations from './src/pages/informations';
+import Chatbot from './src/pages/chatbot';
 
 export default function App() {
 
@@ -38,7 +39,8 @@ export default function App() {
       {/* <Delegated /> */}
       {/* <Media /> */}
       {/* <Funnel /> */}
-      <Informations />
+      {/* <Informations /> */}
+      <Chatbot />
       <StatusBar style="light" translucent={false} backgroundColor='#212121' />
       </SafeAreaProvider>
   );
