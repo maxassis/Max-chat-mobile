@@ -17,6 +17,7 @@ import Media from './src/pages/media';
 import Funnel from './src/pages/funnel';
 import Informations from './src/pages/informations';
 import Chatbot from './src/pages/chatbot';
+import Dashboard from './src/pages/dashboard';
 
 export default function App() {
 
@@ -40,7 +41,8 @@ export default function App() {
       {/* <Media /> */}
       {/* <Funnel /> */}
       {/* <Informations /> */}
-      <Chatbot />
+      {/* <Chatbot /> */}
+      <Dashboard />
       <StatusBar style="light" translucent={false} backgroundColor='#212121' />
       </SafeAreaProvider>
   );
