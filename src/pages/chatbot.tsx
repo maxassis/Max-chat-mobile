@@ -6,6 +6,7 @@ import { Divider } from "@rneui/themed";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function Chatbot() {
@@ -121,39 +122,53 @@ export default function Chatbot() {
 
           <View className="mb-5">
             <View className="flex-row mx-5">
-                <View className="h-11 w-4/12 border-r-[0.5px] border-b-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
+                <View className="p-5 w-4/12 border-r-[0.5px] border-b-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
                     <Text className="text-base">Nome</Text>
                 </View>
-                <View className="h-11 w-4/12 border-b-[0.5px] border-slate-400"></View>
-                <View className="h-11 w-4/12 border-b-[0.5px] border-r-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
-                    <MaterialIcons name="chat-bubble-outline" size={24} color={colors.slate[400]} />
-                    
+                <View className="p-y-5 w-4/12 border-b-[0.5px] border-slate-400 items-center justify-center">
+                    <View className="bg-slate-100 rounded-xl px-2 py-[0.5px] flex-row gap-x-1 items-center">
+                      <Octicons name="dot-fill" size={15} color={colors.green[500]} />
+                      <Text className="text-green-500 text-xs">Executado</Text>
+                    </View>
+                    <Text className="text-[11px] mt-2">10/03/2024 às 10:00</Text>
+                </View>
+                <View className="p-5 w-4/12 border-b-[0.5px] border-r-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
+                    <MaterialIcons name="chat-bubble-outline" size={24} color={colors.slate[400]} />                   
                 </View>
             </View>  
 
             <View className="flex-row mx-5">
-                <View className="h-11 w-4/12 border-r-[0.5px] border-b-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
+                <View className="p-5 w-4/12 border-r-[0.5px] border-b-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
                     <Text className="text-base">Nome</Text>
                 </View>
-                <View className="h-11 w-4/12 border-b-[0.5px] border-slate-400"></View>
-                <View className="h-11 w-4/12 border-b-[0.5px] border-r-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
-                    <Feather name="user" size={24} color={colors.slate[400]} />
+                <View className="p-y-5 w-4/12 border-b-[0.5px] border-slate-400 items-center justify-center">
+                    <View className="bg-slate-100 rounded-xl px-2 py-[0.5px] flex-row gap-x-1 items-center">
+                      <Octicons name="dot-fill" size={15} color={colors.green[500]} />
+                      <Text className="text-green-500 text-xs">Executado</Text>
+                    </View>
+                    <Text className="text-[11px] mt-2">10/03/2024 às 10:00</Text>
+                </View>
+                <View className="p-5 w-4/12 border-b-[0.5px] border-r-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
+                  <Feather name="user" size={24} color={colors.slate[400]} />                    
                 </View>
             </View> 
 
             <View className="flex-row mx-5">
-                <View className="h-11 w-4/12 border-r-[0.5px] border-b-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
+                <View className="p-5 w-4/12 border-r-[0.5px] border-b-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
                     <Text className="text-base">Nome</Text>
                 </View>
-                <View className="h-11 w-4/12 border-b-[0.5px] border-slate-400"></View>
-                <View className="h-11 w-4/12 border-b-[0.5px] border-r-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
-                    <MaterialCommunityIcons name="robot-outline" size={24} color={colors.slate[400]} />
+                <View className="p-y-5 w-4/12 border-b-[0.5px] border-slate-400 items-center justify-center">
+                    <View className="bg-slate-100 rounded-xl px-2 py-[0.5px] flex-row gap-x-1 items-center">
+                      <Octicons name="dot-fill" size={15} color={colors.red[500]} />
+                      <Text className="text-red-500 text-xs">Não executado</Text>
+                    </View>
+                    <Text className="text-[11px] mt-2">10/03/2024 às 10:00</Text>
                 </View>
-            </View> 
-            
+                <View className="p-5 w-4/12 border-b-[0.5px] border-r-[0.5px] border-l-[0.5px] border-slate-400 items-center justify-center">
+                    <MaterialCommunityIcons name="robot-outline" size={24} color={colors.slate[400]} />                    
+                </View>
+            </View>             
           </View> 
-
-
 
         </ScrollView>
       </View>
