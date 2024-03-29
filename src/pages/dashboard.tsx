@@ -314,6 +314,40 @@ export default function Dashboard() {
                     </View>
                 </View>
             </View>
+
+            <Text className="ml-5 mb-5 mt-1 text-xl font-roboto-bold">Usuarios - Chatguru Suporte</Text>
+
+            <View className="h-16  bg-slate-200 mx-5 rounded-t-md items-center justify-between flex-row border-b-[2px] border-slate-300">
+                   <View className="h-full w-[25%] rounded-tl-md items-center justify-center">
+                        <Text className="text-base font-roboto-bold">TIPO</Text>
+                   </View>
+                   <View className="h-full w-[45%] items-center justify-center">
+                        <Text className="text-base font-roboto-bold self-start">NOME</Text>
+                   </View>
+                   <View className="h-full w-[30%] rounded-tr-md items-center justify-center">
+                        <Text className="text-base font-roboto-bold">STATUS</Text>
+                   </View>
+            </View>
+
+            <View className="mb-5">
+                <View className="h-12 border-[0.5px] border-t-0 justify-between border-slate-400 mx-5 flex-row">
+                    <View className=" flex-row w-[70%]">
+                        <View className="w-[35%] items-center justify-center">
+                            <Feather name="user" size={24} color="#a3a3a3" />
+                        </View>
+                        <View className="w-[65%] justify-center">
+                            <Text className="font-roboto-bold" numberOfLines={1}>Ana Barcelos</Text>
+                            <Text className="text-xs text-slate-400" numberOfLines={1}>ana.barcelos@chatguru.com.br</Text>
+                        </View>
+                    </View>
+                    <View className="w-[30%] items-center justify-center">
+                    <View className="w-[62px] h-[30px] bg-green-500 items-center justify-center">
+                        <Text className="text-white">Logado</Text>
+                    </View>
+                    </View>
+                </View>
+            </View>
+
             </ScrollView>
         </SafeAreaView>
     )
