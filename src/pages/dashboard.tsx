@@ -3,13 +3,21 @@ import { AntDesign } from '@expo/vector-icons';
 import { Feather } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { FontAwesome6 } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import colors from "tailwindcss/colors";
 
 
 
 export default function Dashboard() {
+    const navigation = useNavigation();
+
     return (
         <SafeAreaView className="flex-1">
+            <View className="bg-cg-black flex-row items-center h-14 px-3 gap-x-4">
+                <Ionicons name="arrow-back" size={35} color="#fff" onPress={() => navigation.goBack()} />
+                <Text className="text-white text-xl">Dashboard</Text>
+            </View>
             <ScrollView className="flex-1" overScrollMode="never">
             <View className="flex-1">
                 <Text className="mt-5 ml-5 mb-5 text-xl font-roboto-bold">Bom dia, Gabi</Text>

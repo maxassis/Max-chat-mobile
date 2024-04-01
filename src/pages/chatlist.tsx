@@ -15,12 +15,14 @@ import { AntDesign } from "@expo/vector-icons";
 import Card from "../components/card";
 import { FlashList } from "@shopify/flash-list";
 import type { ChatlistData } from "../types/chatlistTypes";
+import { useNavigation } from "@react-navigation/native";
 //import { mock } from "../../mockChatlist";
 
 
 export default function Chatlist() {
    const [data, setData] = useState<ChatlistData[]>();
-
+   const navigation = useNavigation<any>();
+   
 
   useEffect(() => {
     // setLoading(true);
@@ -40,7 +42,7 @@ export default function Chatlist() {
         <View className="bg-cg-black flex-row items-center h-14 px-3 justify-between ">
           <Logo width={120} />
 
-          <SimpleLineIcons name="menu" size={24} color="#fff" />
+          <SimpleLineIcons name="menu" size={24} color="#fff" onPress={() => navigation.openDrawer()} />
         </View>
 
         <View className="h-16 bg-slate-100 justify-between items-center pr-5 pl-6 flex-row">

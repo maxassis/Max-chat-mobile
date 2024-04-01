@@ -1,3 +1,4 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
@@ -18,6 +19,7 @@ import Funnel from './src/pages/funnel';
 import Informations from './src/pages/informations';
 import Chatbot from './src/pages/chatbot';
 import Dashboard from './src/pages/dashboard';
+import Routes from "./src/routes";
 
 export default function App() {
 
@@ -32,6 +34,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
+       <NavigationContainer>
       {/* <Login /> */}
       {/* <Chatlist /> */}
       {/* <Chat /> */}
@@ -42,8 +45,10 @@ export default function App() {
       {/* <Funnel /> */}
       {/* <Informations /> */}
       {/* <Chatbot /> */}
-      <Dashboard />
+      {/* <Dashboard /> */}
+      <Routes />
       <StatusBar style="light" translucent={false} backgroundColor='#212121' />
+      </NavigationContainer> 
       </SafeAreaProvider>
   );
 }
