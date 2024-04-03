@@ -1,7 +1,8 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { cva } from 'class-variance-authority'
 import type { ChatlistData, LastMessage, Tag } from "../types/chatlistTypes";
+import { useNavigation } from '@react-navigation/native'
 
 const PillStyles = cva("py-[0.5px] px-2 rounded-full items-center justify-center", {
   variants: {
@@ -18,10 +19,11 @@ const PillStyles = cva("py-[0.5px] px-2 rounded-full items-center justify-center
 
 
 export default function Card({dt}: {dt: ChatlistData}) {
+  const navigation = useNavigation()
   const statusColor = dt.status;
   
   return (
-    <View className="h-20 border-b-[0.5px] border-slate-300 flex-row items-center justify-between pr-4 pl-2 gap-x-2 ">
+    <TouchableOpacity onPress={() => navigation.navigate('Chat')} className="h-20 border-b-[0.5px] border-slate-300 flex-row items-center justify-between pr-4 pl-2 gap-x-2 ">
       <View className="flex-row gap-x-2 pr-2 flex-1">
         <Image
           source={{ uri: "https://picsum.photos/48/48" }}
@@ -41,7 +43,7 @@ export default function Card({dt}: {dt: ChatlistData}) {
       <View className="">
         <View className="flex-row gap-x-2 mb-3 justify-end">
           <View className={PillStyles({ intent: dt.status })}>
-            <Text className="text-xs text-white">ABERTO</Text>
+            <Text className="text-xs text-white">{dt.status == "EM ATENDIMENTO" ? "EM ATENDI" : dt.status}</Text>
           </View>
           {dt.new_messages && (
             <View className="py-[0.5px] px-2 rounded-full items-center justify-center bg-cg-red">
@@ -49,10 +51,6 @@ export default function Card({dt}: {dt: ChatlistData}) {
           </View> 
           )}
 
-
-          {/* <View className="py-[0.5px] px-2 rounded-full items-center justify-center bg-cg-red">
-            <Text className="text-white">{dt.new_messages}</Text>
-          </View> */}
         </View>
 
         <View className="flex-row justify-end">
@@ -73,6 +71,6 @@ export default function Card({dt}: {dt: ChatlistData}) {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }

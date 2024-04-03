@@ -59,8 +59,8 @@ export default function DrawerRoutes() {
       <Drawer.Screen
         name="Chatlist"
         options={{
-          drawerLabel: "Chats",
-          title: "Chats",
+          drawerLabel: "Chatlist",
+          title: "Chatslist",
           drawerIcon: ({ focused }) =>
             focused ? (
               <Entypo name="chat" size={24} color="#14B67B" />

@@ -9,5 +9,5 @@ export default function Routes() {
     // authStore = tokenExists((state) => state.token)
     
    // return authStore ? <StackRoutes /> : <AuthRoutes />
-   return <DrawerRoutes />
+   return <StackRoutes />
 }

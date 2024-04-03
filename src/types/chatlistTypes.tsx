@@ -6,7 +6,7 @@ export interface ChatlistData {
     name: string
     kind: string
     picture: string | null
-    status: 'AGUARDANDO' | 'ABERTO' | 'EM ATENDIMENTO' | 'RESOLVIDO' | 'FECHADO'
+    status: "AGUARDANDO" | "ABERTO" | "EM ATENDIMENTO" | "RESOLVIDO" | "FECHADO" | null 
     favorite: boolean
     archived: boolean
     scheduled: boolean

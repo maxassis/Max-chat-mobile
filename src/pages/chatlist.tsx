@@ -16,26 +16,26 @@ import Card from "../components/card";
 import { FlashList } from "@shopify/flash-list";
 import type { ChatlistData } from "../types/chatlistTypes";
 import { useNavigation } from "@react-navigation/native";
-//import { mock } from "../../mockChatlist";
+import { mock } from "../../mockChatlist";
 
 
 export default function Chatlist() {
    const [data, setData] = useState<ChatlistData[]>();
    const navigation = useNavigation<any>();
-   
-
-  useEffect(() => {
-    // setLoading(true);
-    const data = fetch(
-      "https://run.mocky.io/v3/eae31c54-ae3d-41f7-9586-ce3e4d8e20b9"
-    )
-      .then((response) => response.json())
-      .then((json) => {
-        setData(json.chats);
-      })
-      .catch((e) => console.log("teste", e));
-    // .finally(() => setLoading(false));
-  }, []);
+   const mockData = mock.chats as ChatlistData[]
+  
+  // useEffect(() => {
+  //   // setLoading(true);
+  //   const data = fetch(
+  //     "https://run.mocky.io/v3/eae31c54-ae3d-41f7-9586-ce3e4d8e20b9"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       setData(json.chats);
+  //     })
+  //     .catch((e) => console.log("teste", e));
+  //   // .finally(() => setLoading(false));
+  // }, []);
 
   return (
     <SafeAreaView className="flex-1">
@@ -71,7 +71,7 @@ export default function Chatlist() {
 
         <FlashList
           overScrollMode="never"
-          data={data}
+          data={mockData}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <Card dt={item} />}
           estimatedItemSize={80}

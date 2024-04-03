@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Chatlist from '../pages/chatlist';
-import Chats from '../pages/chat';
+// import Chatlist from '../pages/chatlist';
+import Chat from '../pages/chat';
+import DrawerRoutes from './drawer.routes';
 //import Filters from '../pages/filters';
 //import TabRoutes from './tabs.routes';
 //import DrawerRoutes from './drawer.routes';
@@ -15,10 +16,10 @@ export default function AppRoutes() {
             screenOptions={{
                 headerShown: false
             }}
-            initialRouteName="Chatlist"
+            initialRouteName="ChatlistInitial"
         >
-            <App.Screen name="Chatlist" component={Chatlist} />
-            <App.Screen name="Chats" component={Chats} />
+            <App.Screen name="ChatlistInitial" component={DrawerRoutes} />
+            <App.Screen name="Chat" component={Chat} />
         </App.Navigator>
     )
 }
