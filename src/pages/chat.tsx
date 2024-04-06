@@ -27,6 +27,8 @@ import PaperClip from "../../assets/paperclip.svg";
 import EmojiPicker, { pt } from "rn-emoji-keyboard";
 import { useKeyboardVisible } from "../hooks/keyboard";
 import colors from "tailwindcss/colors";
+import userInfo from "../store/userInfo";
+import { useNavigation } from '@react-navigation/native'
 
 interface chat {
   id: number;
@@ -34,7 +36,24 @@ interface chat {
   received: null | string;
 }
 
+const PillStyles = cva(
+  "items-center px-2 justify-center self-start rounded-full",
+  {
+    variants: {
+      intent: {
+        AGUARDANDO: "bg-cg-yellow",
+        ABERTO: "bg-cg-red",
+        "EM ATENDIMENTO": "bg-cg-blue",
+        RESOLVIDO: "bg-cg-green-secondary",
+        FECHADO: "bg-cg-blue-light",
+      },
+    },
+  }
+);
+
 export default function Chat() {
+  const user = userInfo((state) => state.user);
+  const navigation = useNavigation<any>()
   const [isOpen, setIsOpen] = useState(false);
   const [userInput, setUserInput] = useState("");
   const [float, setFloat] = useState(false);
@@ -63,7 +82,7 @@ export default function Chat() {
       <TouchableWithoutFeedback onPress={() => closeMenu()}>
         <KeyboardAvoidingView behavior="padding" enabled className="flex-1">
           <View className="h-16 bg-white items-center px-3 flex-row border-b-[0.5px] border-b-slate-400  ">
-            <Ionicons name="arrow-back" size={35} color="#333333" />
+            <Ionicons name="arrow-back" size={35} color="#333333" onPress={() => navigation.navigate('Chatlist') } />
 
             <Avatar className="h-12 w-12 ml-2">
               <AvatarImage source={require("../../assets/compress2.jpg")} />
@@ -75,11 +94,11 @@ export default function Chat() {
                 numberOfLines={1}
                 className="text-cg-black-secondary text-lg font-roboto-bold"
               >
-                Gabi Ware
+                {user.name}
               </Text>
 
-              <View className={PillStyles({ intent: "AGUARDANDO" })}>
-                <Text className="text-white">AGUARDANDO</Text>
+              <View className={PillStyles({ intent: user.status })}>
+                <Text className="text-white">{user.status}</Text>
               </View>
             </View>
 
@@ -170,7 +189,7 @@ export default function Chat() {
             categoryPosition="top"
           />
 
-          <View className="min-h-[70] max-h-[] py-3 max-h-15o px-3 border-t-[0.5px] border-slate-400 flex-row items-center">
+          <View className="min-h-[70] max-h-[] py-3 max-h-15o px-3 border-t-[0.5px] border-slate-400 flex-row items-center bg-white">
             {float && (
               <View
                 className="absolute bottom-16 left-2 w-[52px] h-[180px] items-center justify-between p-3 
@@ -218,17 +237,4 @@ export default function Chat() {
   );
 }
 
-const PillStyles = cva(
-  "items-center px-2 justify-center self-start rounded-full",
-  {
-    variants: {
-      intent: {
-        AGUARDANDO: "bg-cg-yellow",
-        ABERTO: "bg-cg-red",
-        "EM ATENDIMENTO": "bg-cg-blue",
-        RESOLVIDO: "bg-cg-green-secondary",
-        FECHADO: "bg-cg-blue-light",
-      },
-    },
-  }
-);
+

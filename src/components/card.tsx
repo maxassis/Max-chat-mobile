@@ -3,6 +3,8 @@ import { Feather } from "@expo/vector-icons";
 import { cva } from 'class-variance-authority'
 import type { ChatlistData, LastMessage, Tag } from "../types/chatlistTypes";
 import { useNavigation } from '@react-navigation/native'
+import userInfo from "../store/userInfo";
+
 
 const PillStyles = cva("py-[0.5px] px-2 rounded-full items-center justify-center", {
   variants: {
@@ -16,14 +18,18 @@ const PillStyles = cva("py-[0.5px] px-2 rounded-full items-center justify-center
   },
 });
 
-
-
 export default function Card({dt}: {dt: ChatlistData}) {
-  const navigation = useNavigation()
+  const navigation = useNavigation<any>()
   const statusColor = dt.status;
+  const user = userInfo((state) => state.setUser)
   
+  function changePage(name: string, id: string, status: "AGUARDANDO" | "ABERTO" | "EM ATENDIMENTO" | "RESOLVIDO" | "FECHADO" | null) {
+    navigation.navigate('Chat')
+    user(name, id, status)
+  }
+
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Chat')} className="h-20 border-b-[0.5px] border-slate-300 flex-row items-center justify-between pr-4 pl-2 gap-x-2 ">
+    <TouchableOpacity onPress={() => changePage(dt.name, dt.id, dt.status )} className="h-20 border-b-[0.5px] border-slate-300 flex-row items-center justify-between pr-4 pl-2 gap-x-2 ">
       <View className="flex-row gap-x-2 pr-2 flex-1">
         <Image
           source={{ uri: "https://picsum.photos/48/48" }}
