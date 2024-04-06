@@ -134,41 +134,41 @@ export default function Chat() {
               <>
                 <View className="absolute w-full h-full bg-black opacity-40 "></View>
                 <View className="absolute justify-around w-[61px] h-[420px] py-2 items-center bg-white border-[0.5px] border-slate-400 right-0 top-0 ">
-                  <TouchableOpacity className="w-11 h-11 rounded-md border-slate-400 border-[0.8px] items-center justify-center">
+                  <TouchableOpacity onPress={() => navigation.navigate('Informations')} className="w-11 h-11 rounded-md border-slate-400 border-[0.8px] items-center justify-center">
                     <Feather name="user" size={30} color={colors.slate[400]} />
                   </TouchableOpacity>
-                  <TouchableOpacity className="w-11 items-center justify-center h-11 rounded-md border-slate-400 border-[0.8px]">
+                  <TouchableOpacity onPress={() => navigation.navigate('Notes')} className="w-11 items-center justify-center h-11 rounded-md border-slate-400 border-[0.8px]">
                     <Ionicons
                       name="document-text-outline"
                       size={30}
                       color={colors.slate[400]}
                     />
                   </TouchableOpacity>
-                  <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
+                  <TouchableOpacity onPress={() => navigation.navigate('Funnel')} className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
                     <Ionicons
                       name="funnel-outline"
                       size={30}
                       color={colors.slate[400]}
                     />
                   </TouchableOpacity>
-                  <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
+                  <TouchableOpacity onPress={() => navigation.navigate('Chatbot')} className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
                     <Octicons
                       name="dependabot"
                       size={30}
                       color={colors.slate[400]}
                     />
                   </TouchableOpacity>
-                  <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
+                  <TouchableOpacity onPress={() => navigation.navigate('Nps')} className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
                     <Feather name="pie-chart" size={30} color={colors.slate[400]} />
                   </TouchableOpacity>
-                  <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
+                  <TouchableOpacity onPress={() => navigation.navigate('Delegated')} className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
                     <Feather
                       name="user-plus"
                       size={30}
                       color={colors.slate[400]}
                     />
                   </TouchableOpacity>
-                  <TouchableOpacity className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
+                  <TouchableOpacity onPress={() => navigation.navigate('Media')} className="w-11 h-11 items-center justify-center rounded-md border-slate-400 border-[0.8px]">
                     <Ionicons
                       name="play-outline"
                       size={30}

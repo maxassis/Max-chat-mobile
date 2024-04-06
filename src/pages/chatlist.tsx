@@ -38,7 +38,7 @@ export default function Chatlist() {
   // }, []);
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-white">
         <View className="bg-cg-black flex-row items-center h-14 px-3 justify-between ">
           <Logo width={120} />
 

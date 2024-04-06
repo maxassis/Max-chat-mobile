@@ -11,7 +11,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function Chatbot() {
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-white">
       <View className="flex-1">
         <HeaderMenu selected="chatbot" />
         <ScrollView overScrollMode="never">

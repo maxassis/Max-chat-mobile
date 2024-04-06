@@ -12,7 +12,7 @@ export default function Informations() {
         <SafeAreaView className="flex-1">
             <KeyboardAvoidingView behavior="padding" enabled className="flex-1">
                 <HeaderMenu selected="informations" />
-                <View className="flex-1">
+                <View className="flex-1 bg-white">
                    <ScrollView overScrollMode="never">
                     <Text className="text-xl ml-5 mt-5 font-roboto-bold mb-5">Informações do chat</Text>
 

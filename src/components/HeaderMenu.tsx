@@ -10,17 +10,19 @@ import {
   import { Feather } from "@expo/vector-icons";
   import colors from "tailwindcss/colors";
   import { Octicons } from "@expo/vector-icons";
-  import { SimpleLineIcons } from "@expo/vector-icons";
+  import { useNavigation } from "@react-navigation/native";
   
   type pageProps = {
       selected: 'informations' | 'funnels' | 'chatbot' | 'media' | 'nps' | 'notes' | 'delegated'
   }
   
   export default function HeaderMenu({selected}: pageProps ) {
+    const navigation = useNavigation<any>();
+
     return (
         <>
-        <View className="h-16 bg-white items-center px-3 flex-row border-b-[0.5px] border-b-slate-300  ">
-          <Ionicons name="arrow-back" size={35} color="#333333" />
+        <View className="h-16 bg-white items-center px-3 flex-row border-b-[1px] border-b-slate-300  ">
+          <Ionicons name="arrow-back" size={35} color="#333333" onPress={() => navigation.navigate('Chat')} />
   
           <Avatar className="h-12 w-12 ml-2">
             <AvatarImage source={require("../../assets/compress2.jpg")} />
@@ -41,7 +43,7 @@ import {
           </View>
         </View>
   
-        <View className="h-[61px] flex-row items-center justify-around border-b-[0.5px] border-b-slate-300">
+        <View className="h-[61px] bg-white flex-row items-center justify-around border-b-[1px] border-b-slate-300">
           <TouchableOpacity className={page({ intent: selected === 'informations' ? "select" : null})}>
             <Feather name="user" size={27} color={selected === 'informations' ? "#fff" : colors.slate[400]} />
           </TouchableOpacity>

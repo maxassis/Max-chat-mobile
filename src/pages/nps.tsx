@@ -5,7 +5,7 @@ import colors from "tailwindcss/colors";
 
 export default function Nps() {
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-white">
       <HeaderMenu selected="nps" />
       <View className="flex-1 pt-5">
         <Text className="text-xl ml-5 font-roboto-bold">Histórico de NPS</Text>

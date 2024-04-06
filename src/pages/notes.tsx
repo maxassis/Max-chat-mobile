@@ -6,7 +6,7 @@ import { Feather } from "@expo/vector-icons";
 
 export default function Notes() {
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-white">
       <HeaderMenu selected="notes" />
       <View className="flex-1 pt-5">
         <Text className="text-xl ml-5 font-roboto-bold ">Anotações internas</Text>

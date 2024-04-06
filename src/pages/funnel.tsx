@@ -4,7 +4,7 @@ import { Feather } from "@expo/vector-icons";
 
 export default function Funnel() {
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-white">
       <HeaderMenu selected="funnels" />
       <View className="flex-1 pt-5">
         <Text className="text-xl ml-5 mb-5 font-roboto-bold">Funil</Text>
