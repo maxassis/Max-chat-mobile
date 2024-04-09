@@ -44,25 +44,25 @@ import {
         </View>
   
         <View className="h-[61px] bg-white flex-row items-center justify-around border-b-[1px] border-b-slate-300">
-          <TouchableOpacity className={page({ intent: selected === 'informations' ? "select" : null})}>
+          <TouchableOpacity onPress={() => {navigation.navigate('Informations')}} className={page({ intent: selected === 'informations' ? "select" : null})}>
             <Feather name="user" size={27} color={selected === 'informations' ? "#fff" : colors.slate[400]} />
           </TouchableOpacity>
-          <TouchableOpacity className={page({ intent: selected === 'notes' ? "select" : null})}>
+          <TouchableOpacity onPress={() => {navigation.navigate('Notes')}}  className={page({ intent: selected === 'notes' ? "select" : null})}>
             <Ionicons name="document-text-outline" size={27} color={selected === 'notes' ? "#fff" : colors.slate[400]} />
           </TouchableOpacity>
-          <TouchableOpacity className={page({ intent: selected === 'funnels' ? "select" : null})}>
+          <TouchableOpacity onPress={() => {navigation.navigate('Funnel')}}  className={page({ intent: selected === 'funnels' ? "select" : null})}>
             <Ionicons name="funnel-outline" size={27} color={selected === 'funnels' ? "#fff" : colors.slate[400]} />
           </TouchableOpacity>
-          <TouchableOpacity className={page({ intent: selected === 'chatbot' ? "select" : null})}>
+          <TouchableOpacity onPress={() => {navigation.navigate('Chatbot')}} className={page({ intent: selected === 'chatbot' ? "select" : null})}>
             <Octicons name="dependabot" size={27} color={selected === 'chatbot' ? "#fff" : colors.slate[400]} />
           </TouchableOpacity>
-          <TouchableOpacity className={page({ intent: selected === 'nps' ? "select" : null })}>
+          <TouchableOpacity onPress={() => {navigation.navigate('Nps')}}  className={page({ intent: selected === 'nps' ? "select" : null })}>
             <Feather name="pie-chart" size={27} color={selected === 'nps' ? "#fff" : colors.slate[400]} />          
           </TouchableOpacity>
-          <TouchableOpacity className={page({ intent: selected === 'delegated' ? "select" : null })}>
+          <TouchableOpacity onPress={() => {navigation.navigate('Delegated')}} className={page({ intent: selected === 'delegated' ? "select" : null })}>
             <Feather name="user-plus" size={27} color={selected === 'delegated' ? "#fff" : colors.slate[400]} />
           </TouchableOpacity>
-          <TouchableOpacity className={page({ intent: selected === 'media' ? "select" : null })}>
+          <TouchableOpacity onPress={() => {navigation.navigate('Media')}}  className={page({ intent: selected === 'media' ? "select" : null })}>
             <Ionicons name="play-outline" size={27} color={selected === 'media' ? "#fff" : colors.slate[400]} />
           </TouchableOpacity>
         </View>
