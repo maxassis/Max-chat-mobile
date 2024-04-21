@@ -5,10 +5,14 @@ import { Entypo } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import Dashboard from '../pages/dashboard';
 import { SafeAreaView, View, Text, Image, TouchableOpacity, Alert } from 'react-native';
+import tokenExists from "../store/auth"
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerRoutes() {
+  let authStore = tokenExists((state) => state.removeToken)
+
+
   function signout() {
     Alert.alert("Deseja sair do App ?", "", [
       {
@@ -20,6 +24,8 @@ export default function DrawerRoutes() {
         onPress: () => {
           // AsyncStorage.removeItem("@Cg:token");
           // authStore();
+          console.log("heheheheh")
+          authStore()
         },
       },
     ]);
