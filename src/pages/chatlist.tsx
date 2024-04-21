@@ -8,7 +8,7 @@ import {
   View,
   FlatList
 } from "react-native";
-import Logo from "../../assets/chatguru.svg";
+// import Logo from "../../assets/chatguru.svg";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
@@ -40,7 +40,8 @@ export default function Chatlist() {
   return (
     <SafeAreaView className="flex-1 bg-white">
         <View className="bg-cg-black flex-row items-center h-14 px-3 justify-between ">
-          <Logo width={120} />
+          {/* <Logo width={120} /> */}
+          <Text className="text-white text-2xl">Max Chat</Text>
 
           <SimpleLineIcons name="menu" size={24} color="#fff" onPress={() => navigation.openDrawer()} />
         </View>

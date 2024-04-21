@@ -1,5 +1,5 @@
 import { KeyboardAvoidingView, SafeAreaView, Text, TextInput, TouchableOpacity, View } from "react-native"
-import Logo from "../../assets/chatguru.svg"
+// import Logo from "../../assets/chatguru.svg"
 import tokenExists from "../store/auth"
 
 export default function Login() {
@@ -10,7 +10,8 @@ export default function Login() {
             <KeyboardAvoidingView behavior="padding" enabled className="flex-1">
             <View className="flex-1 bg-cg-black items-center justify-center px-5">
                 <View className="mb-16">
-                    <Logo width={240} />
+                    {/* <Logo width={240} /> */}
+                    <Text className="text-white text-5xl">Max Chat</Text>
                     <Text className="text-white text-base text-center">Bem vindo a nossa plataforma!</Text>
                </View>
 
