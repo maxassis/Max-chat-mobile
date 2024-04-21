@@ -16,7 +16,7 @@ Max Chat Mobile é um aplicativo de chat desenvolvido com React Native que permi
 - React Native
 - Expo
 - React Navigation
-- Zusdant (para gerenciamento de estado)
+- Zustand (para gerenciamento de estado)
 
 ## Instalação
 
