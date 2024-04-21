@@ -20,7 +20,7 @@ Max Chat Mobile é um aplicativo de chat desenvolvido com React Native que permi
 
 ## Instalação
 
-1. Clone este repositório: `git clone https://github.com/maxassis/chatlist-mobile-ts`
+1. Clone este repositório: `git clone https://github.com/maxassis/Max-chat-mobile`
 2. Instale as dependências: `npm install`
 3. Inicie o aplicativo: `npx expo start`
 4. abra o emulador Android studio ou Xcode ou utilize o app Expo Go disponivel Apple Store ou Google Play
