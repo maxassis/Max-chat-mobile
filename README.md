@@ -33,10 +33,6 @@ Max Chat Mobile é um aplicativo de chat desenvolvido com React Native que permi
 ![](https://images2.imgbox.com/83/af/CIcMqoZq_o.png)
 ![](https://images2.imgbox.com/83/b1/xu9yLOSh_o.png)
 
-![](https://images2.imgbox.com/e2/42/biH9fqUH_o.png)
-
-
-
 ## Contribuição
 
 Contribuições são bem-vindas! Se você encontrou algum problema ou tem uma sugestão de melhoria, sinta-se à vontade para abrir uma issue ou enviar um pull request.
